@@ -10,3 +10,6 @@ index = 0
 for quote in twit_quotes:
     csv_writer.writerow([twit_quotes[index]])
     index += 1
+
+
+# This script simply writes all the content of the twit_quotes list into a .csv file for me to use in my bot code.
