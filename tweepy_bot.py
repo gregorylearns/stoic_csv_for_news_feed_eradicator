@@ -13,20 +13,13 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 # Create API object
 api = tweepy.API(auth)
 
-# x = datetime.today()
-# y = x.replace(day=x.day, hour=1, minute=0, second=0, microsecond=0) + timedelta(days=1)
-# delta_t = y-x
-# secs = delta_t.total_seconds()
-
+# use pandas to read the quotes out of the csv file. Pandas was the most efficient way to do this that I found.
 quote = []
 quotes = pd.read_csv('quote_text_tweets.csv')
 
-
+# a random quote will be chosen and tweeted each time the script runs
 def tweet_stoic_quote():
     api.update_status(random.choice(quotes['QUOTE']), flush=True)
 
-
-# t = Timer(secs, tweet_stoic_quote)
-# t.start()
 
 tweet_stoic_quote()
