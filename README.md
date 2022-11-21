@@ -1,0 +1,1 @@
+# Stoic quotes formatted for News Feed Eradicator addon
